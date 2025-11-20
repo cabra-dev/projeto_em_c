@@ -5,7 +5,7 @@
 
 // Constantes globais
 #define MAX_PRODUTOS 50
-#define MAX_MOVIMETACOES 100
+#define MAX_MOVIMENTACOES 100
 #define NOME_MAX 50
 
 // Estrutura do Produto

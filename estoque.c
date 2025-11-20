@@ -3,14 +3,12 @@
 #include <string.h>
 #include "estoque.h"
 
-Produto listaProdutos[MAX_PRODUTOS]; // Vetor de Produtos
+Produto listaProdutos[MAX_PRODUTOS]; 
 int totalProdutos = 0;
-
-// Matriz de Movimentação
 int matrizMovimentacao[MAX_MOVIMENTACOES][5];
-int totalMovimentacao = 0;
+int totalMovimentacoes = 0; 
 
-// Função auxilixar para buscar índice
+// Função auxiliar para buscar índice
 int buscarIndiceProduto(int codigo) {
     for (int i = 0; i < totalProdutos; i++) {
         if (listaProdutos[i].codigo == codigo) {
@@ -28,7 +26,7 @@ void limparBuffer() {
 // Cadastro de Produtos
 void cadastrarProduto() {
     if (totalProdutos >= MAX_PRODUTOS) {
-        printf("\n Capacidade máxima atingida!\n");
+        printf("\n Capacidade maxima atingida!\n");
         return;
     }
 
@@ -39,7 +37,7 @@ void cadastrarProduto() {
     limparBuffer();
 
     if (buscarIndiceProduto(p.codigo) != -1) {
-        printf("O codigo já existe!\n");
+        printf("O codigo ja existe!\n");
         return;
     }
 
@@ -51,11 +49,11 @@ void cadastrarProduto() {
     scanf("%f", &p.preco);
 
     printf("Digite a quantidade inicial: ");
-    scanf("%d", $p.quantidade);
+    scanf("%d", &p.quantidade);
 
     listaProdutos[totalProdutos] = p;
     totalProdutos++;
-    printf("Produto cadastrato com sucesso!\n");
+    printf("Produto cadastrado com sucesso!\n");
 }
 
 // Movimentação de Entrada e Saida do Produto
@@ -78,10 +76,10 @@ void registrarMovimentacao() {
 
     printf("Produto: %s | Saldo Atual: %d\n", listaProdutos[i].nome, listaProdutos[i].quantidade);
     printf("Tipo (1-Entrada / 2-Saida): ");
-    scanf("%d," &tipo);
+    scanf("%d", &tipo);
 
     if (tipo != 1 && tipo != 2) {
-        printf("Tipo invalidp\n");
+        printf("Tipo invalido\n");
         return;
     }
 
@@ -89,7 +87,7 @@ void registrarMovimentacao() {
     scanf("%d", &qtd);
 
     if (qtd <= 0) {
-        printf("Quantidade correta!\n");
+        printf("Quantidade invalida!\n");
         return;
     }
 
@@ -101,7 +99,7 @@ void registrarMovimentacao() {
             printf("Saldo insuficiente!\n");
             return;
         }
-        listaProdutos[i].quantidade -=qtd // Saida
+        listaProdutos[i].quantidade -= qtd; 
     }
 
     printf("Data (Dia Mes): ");
@@ -115,7 +113,7 @@ void registrarMovimentacao() {
     matrizMovimentacao[totalMovimentacoes][4] = mes;
     totalMovimentacoes++;
 
-    printf("Movimentacao registrada com sucesse!\n");
+    printf("Movimentacao registrada com sucesso!\n");
 }
 
 // Consulta de Estoque
@@ -127,7 +125,7 @@ void consultarEstoque() {
 
     int i = buscarIndiceProduto(codigo);
     if (i == -1) {
-        printf("Produto nao encontado.\n");
+        printf("Produto nao encontrado.\n");
         return;
     }
 
