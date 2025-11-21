@@ -1,60 +1,127 @@
 # Sistema de Controle de Estoque - UNIPÊ 📦
 
-> Projeto avaliativo desenvolvido para a disciplina de Técnicas e Desenvolvimento de Algoritmos.
+> Projeto avaliativo desenvolvido para a disciplina **Técnicas e Desenvolvimento de Algoritmos**.
+
+---
 
 ## 📝 Sobre o Projeto
-Este é um sistema de gerenciamento de estoque desenvolvido em linguagem C. O objetivo é aplicar conceitos de **modularização**, **structs** e **matrizes** para criar uma aplicação de console funcional.
 
-O sistema permite o cadastro de produtos, controle de fluxo (entradas e saídas) e auditoria através de relatórios.
+Este sistema foi desenvolvido em linguagem **C** com foco em aplicar conceitos fundamentais de programação estruturada, tais como:
+
+* Modularização (arquivos `.c` e `.h`)
+* Estruturas (`struct`)
+* Matrizes e vetores
+* Validação de dados
+* Interação via console
+
+Ele simula um **controle básico de estoque**, permitindo que o usuário cadastre produtos, registre entradas/saídas e visualize relatórios completos de movimentações.
+
+---
 
 ## 🚀 Funcionalidades
-Conforme os requisitos do projeto, o sistema realiza:
 
-1.  **Cadastro de Produtos:** Armazena código, nome, preço e quantidade em um vetor de estruturas.
-2.  **Movimentação de Estoque:**
-    * Registra **Entradas** (aumenta estoque).
-    * Registra **Saídas** (diminui estoque com validação de saldo).
-    * Utiliza uma **Matriz** para salvar o histórico (Log).
-3.  **Consulta:** Busca rápida de produtos pelo código.
-4.  **Relatório Geral:** Exibe todas as movimentações feitas (Data, Tipo, Produto e Quantidade).
+O sistema oferece as seguintes operações:
 
-## 📂 Estrutura dos Arquivos
-O projeto foi modularizado para melhor organização:
+### **1. Cadastro de Produtos**
 
-* `main.c`: Arquivo principal (Menu e controle de fluxo).
-* `estoque.c`: Implementação das funções e lógica.
-* `estoque.h`: Cabeçalho (Definição das structs e protótipos).
+Armazena em vetor:
 
-## 💻 Como Compilar e Rodar
-Como o projeto é dividido em múltiplos arquivos, é necessário compilar o `main.c` junto com o `estoque.c`.
+* Código
+* Nome
+* Preço
+* Quantidade
 
-### Passo 1: Compilação
-* Abra o terminal na pasta do projeto e digite:
-  ```bash
-`gcc main.c estoque.c -o sistema_estoque`
+Inclui validação para evitar códigos duplicados.
 
-### Passo 2: Execução
-* Após compilar, rode o executável gerado:
-* No Windows (PowerShell/CMD).
-  ```bash
-`.\sistema_estoque.exe`
+### **2. Movimentação de Estoque**
 
-* No Linux/Mac:
-  ```bash
-`./sistema_estoque`
+Registra:
 
+* **Entrada** (aumenta estoque)
+* **Saída** (valida o saldo antes de remover)
 
-## ⚠️ Instrução de Uso (Formato de Data)
-O sistema utiliza o padrão de leitura de inteiros do C. Ao digitar datas, utilize espaço para separar o dia do mês.
+Todas as movimentações são salvas em uma **matriz de log**, contendo:
 
-✅ Correto: 15 06 (Dia 15, Mês 06)
-❌ Errado: 15/06 (Isso pode causar erro na leitura)
+```
+[código, tipo (1=Entrada / 2=Saída), quantidade, dia, mês]
+```
+
+### **3. Consulta de Produtos**
+
+Busca por código e exibe:
+
+* Nome
+* Preço
+* Quantidade
+* Status (Disponível / Esgotado)
+
+### **4. Relatório Geral**
+
+Mostra o histórico completo das movimentações, incluindo data e tipo.
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+📁 projeto-estoque-c
+ ├── main.c          # Gerencia o menu e fluxo principal
+ ├── estoque.c       # Funções de lógica e operações do estoque
+ ├── estoque.h       # Cabeçalho com constantes, structs e protótipos
+ └── README.md       # Documentação
+```
+
+---
+
+## 💻 Como Compilar e Executar
+
+Como o projeto é modular, compile **todos os arquivos juntos**.
+
+### 🔧 Passo 1: Compilar
+
+```bash
+gcc main.c estoque.c -o sistema_estoque
+```
+
+### ▶️ Passo 2: Executar
+
+#### **Windows (PowerShell/CMD):**
+
+```bash
+./sistema_estoque.exe
+```
+
+#### **Linux/Mac:**
+
+```bash
+./sistema_estoque
+```
+
+---
+
+## ⚠️ Observação Importante Sobre Datas
+
+A entrada da data deve ser feita com espaço entre dia e mês:
+
+```
+✔ Correto: 15 06
+✘ Errado: 15/06
+```
+
+O formato "15/06" não é reconhecido pela função `scanf` e causará erro de leitura.
+
+---
 
 ## 👨‍💻 Autores
-* [Eduardo]
-* [Matheus]
+
+* **Eduardo**
+* **Matheus**
+
+---
 
 ## 📄 Licença
-Uso livre para fins de estudo e aperfeiçoamento.
-Instituição: UNIPÊ - Centro Universitário de João Pessoa
-Disciplina: Técnicas e Desenvolvimento de Algoritmos
+
+Uso livre para fins acadêmicos e aperfeiçoamento.
+
+**Instituição:** UNIPÊ — Centro Universitário de João Pessoa
+**Disciplina:** Técnicas e Desenvolvimento de Algoritmos
