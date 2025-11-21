@@ -29,16 +29,19 @@ O projeto foi modularizado para melhor organização:
 Como o projeto é dividido em múltiplos arquivos, é necessário compilar o `main.c` junto com o `estoque.c`.
 
 ### Passo 1: Compilação
-* Abra o terminal na pasta do projeto e digite.
-**`gcc main.c estoque.c -o sistema_estoque`**
+* Abra o terminal na pasta do projeto e digite:
+  ```bash
+`gcc main.c estoque.c -o sistema_estoque`
 
 ### Passo 2: Execução
-* Após compilar, rode o executável gerado.
+* Após compilar, rode o executável gerado:
 * No Windows (PowerShell/CMD).
-**`.\sistema_estoque.exe`**
+  ```bash
+`.\sistema_estoque.exe`
 
-* No Linux/Mac.
-**`./sistema_estoque`**
+* No Linux/Mac:
+  ```bash
+`./sistema_estoque`
 
 
 ## ⚠️ Instrução de Uso (Formato de Data)
