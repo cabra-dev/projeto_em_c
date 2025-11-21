@@ -123,5 +123,5 @@ O formato "15/06" não é reconhecido pela função `scanf` e causará erro de l
 
 Uso livre para fins acadêmicos e aperfeiçoamento.
 
-**Instituição:** UNIPÊ — Centro Universitário de João Pessoa
-**Disciplina:** Técnicas e Desenvolvimento de Algoritmos
+* **Instituição:** UNIPÊ — Centro Universitário de João Pessoa
+* **Disciplina:** Técnicas e Desenvolvimento de Algoritmos
