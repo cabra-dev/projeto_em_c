@@ -8,12 +8,12 @@ int main() {
     int opcao;
 
     do {
-        opcao = -1; // <--- ADICIONE ISSO (Evita o loop infinito se digitar errado)
+        opcao = -1; // Reinicia a opcao para evitar loops indesejados
 
-        printf("\n=== SISTEMA DE ESTOQUE DA UNIPE ===\n"); // Ajustei o texto
-        printf("1. Cadastrar Produto\n"); // Corrigido "Produtdo"
+        printf("\n=== SISTEMA DE ESTOQUE DA UNIPE ===\n"); 
+        printf("1. Cadastrar Produto\n"); 
         printf("2. Movimentacao (Entrada/Saida)\n");
-        printf("3. Consultar Produto\n"); // Removido o ")" estranho
+        printf("3. Consultar Produto\n");
         printf("4. Relatorio Geral\n");
         printf("0. Sair\n");
         printf("Opcao: ");

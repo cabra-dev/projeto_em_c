@@ -32,7 +32,7 @@ void cadastrarProduto() {
 
     Produto p;
     printf("\n--- CADASTRO DE PRODUTOS ---\n");
-    printf("Digite o codigo: ");
+    printf("Digite o Codigo do Produto: ");
     scanf("%d", &p.codigo);
     limparBuffer();
 
